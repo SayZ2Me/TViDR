@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "4IMM+PJrUs6Og+2Uu3n6UhMIXvuetQPa8aHXCsDbH+hCF/alBBo7oY+pUuvw467w3vPD8Umb4e3qYW0xxklk5w==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\derri\\source\\repos\\TViDR_UTest\\TViDR_UTest\\TViDR_UTest.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Не удалось загрузить индекс служб для источника https://api.nuget.org/v3/index.json.",
+      "libraryId": "MSTest.TestFramework"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Не удалось загрузить индекс служб для источника https://api.nuget.org/v3/index.json.",
+      "libraryId": "Microsoft.NET.Test.Sdk"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Не удалось загрузить индекс служб для источника https://api.nuget.org/v3/index.json.",
+      "libraryId": "coverlet.collector"
+    },
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "Не удалось загрузить индекс служб для источника https://api.nuget.org/v3/index.json.",
+      "libraryId": "MSTest.TestAdapter"
+    }
+  ]
+}

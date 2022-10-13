@@ -1,0 +1,12 @@
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\obj\Debug\net6.0\TViDR_Lib.csproj.AssemblyReference.cache
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\obj\Debug\net6.0\TViDR_Lib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\obj\Debug\net6.0\TViDR_Lib.AssemblyInfoInputs.cache
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\obj\Debug\net6.0\TViDR_Lib.AssemblyInfo.cs
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\obj\Debug\net6.0\TViDR_Lib.csproj.CoreCompileInputs.cache
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\bin\Debug\net6.0\TViDR_Lib.deps.json
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\bin\Debug\net6.0\TViDR_Lib.dll
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\bin\Debug\net6.0\TViDR_Lib.pdb
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\obj\Debug\net6.0\TViDR_Lib.dll
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\obj\Debug\net6.0\refint\TViDR_Lib.dll
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\obj\Debug\net6.0\TViDR_Lib.pdb
+C:\Users\derri\source\repos\TViDR_Lib\TViDR_Lib\obj\Debug\net6.0\ref\TViDR_Lib.dll
