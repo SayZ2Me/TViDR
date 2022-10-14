@@ -1,0 +1,6 @@
+C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_Lib\bin\Debug\TViDR_Lib.dll
+C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_Lib\bin\Debug\TViDR_Lib.pdb
+C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_Lib\obj\Debug\TViDR_Lib.csproj.AssemblyReference.cache
+C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_Lib\obj\Debug\TViDR_Lib.csproj.CoreCompileInputs.cache
+C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_Lib\obj\Debug\TViDR_Lib.dll
+C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_Lib\obj\Debug\TViDR_Lib.pdb
