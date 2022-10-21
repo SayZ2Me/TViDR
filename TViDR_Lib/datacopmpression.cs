@@ -5,12 +5,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace datacompression
 {
+    public struct Point
+    {
+        public decimal low, high;
+    }
     public static class Extensions
     {
         public static int findIndex<T>(this T[] array, T item)
@@ -21,12 +26,15 @@ namespace datacompression
     public class ACM
     {
         private string data;
-        private Dictionary<char, decimal> dict;
+        private Dictionary<char, decimal> charCodeDict;
+        private Point messageCode;
+        private List<char> keyList;
 
         private static ACM instance;
         private ACM(string data) 
         {
             this.data = data;
+            messageCode = new Point();
         }
         public static ACM GetInstance (string data)
         {
@@ -43,30 +51,63 @@ namespace datacompression
         }
         private void FillDictionary()
         {
-            dict = new Dictionary<char, decimal>();
+            charCodeDict = new Dictionary<char, decimal>();
 
             decimal sum = 0;
 
             foreach (char charBuffer in data) 
             {
-                if (dict.ContainsKey(charBuffer))
+                if (charCodeDict.ContainsKey(charBuffer))
                 {
-                    dict[charBuffer] += 1;
+                    charCodeDict[charBuffer] += 1;
                 }
                 else
                 {
-                    dict.Add(charBuffer, 1);
+                    charCodeDict.Add(charBuffer, 1);
                 }
                 sum += 1;
             }
-            dict = dict.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
+            charCodeDict = charCodeDict.OrderByDescending(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
             decimal increment = 0;
-            List<char> keyList = new List<char>(dict.Keys);
+
+            keyList = new List<char>(charCodeDict.Keys);
+
             foreach(char key in keyList)
             {
-                increment += dict[key];
-                dict[key] = increment / sum;
+                increment += charCodeDict[key];
+                charCodeDict[key] = increment / sum;
             }
+        }
+        public void ProccessData()
+        {
+            decimal high = 0;
+            decimal low = 0;
+            decimal highSym, lowSym;
+
+            for (int i = 0; i < Data.Length; i++) 
+            {
+                if (charCodeDict.ElementAt(0).Key == Data[i])
+                {
+                    lowSym = 0;
+                }
+                else
+                {
+                    lowSym = charCodeDict.ElementAt(keyList.IndexOf(Data[i])-1).Value;
+                }
+
+                highSym = charCodeDict.ElementAt(keyList.IndexOf(Data[i])).Value;
+
+                if (i == 0)
+                {
+                    low = lowSym;
+                    high = highSym;
+                }
+
+                high = low + (high - low) * highSym;
+                low = low + (high - low) * lowSym;
+            }
+            messageCode.low = low;
+            messageCode.high = high;
         }
         public string Data 
         {
@@ -76,15 +117,19 @@ namespace datacompression
                 instance.FillDictionary();
             }
         }
-        public Dictionary<char, decimal> Dict 
+        public Dictionary<char, decimal> Dict
         {
-            get { return dict; }
+            get { return charCodeDict; }
+        }
+        public Point Code
+        {
+            get { return messageCode; }
         }
     }
     public class MTF
     {
-        private char[] alphabet_ru_RU = { 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я', 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', ' ', '.', ',', '!', '?', '-', '_', '*', ';', ':', '@', '(', ')', '[', ']', '{', '}' };
-        private char[] alphabet_en_US = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '-', '_', '*', ';', ':', '@', '(', ')', '[', ']', '{', '}' };
+        private char[] alphabet_ru_RU = { 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я', 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', ' ', '.', ',', '!', '?', '-', '_', '*', ';', ':', '@', '(', ')', '[', ']', '{', '}', '—', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        private char[] alphabet_en_US = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '-', '_', '*', ';', ':', '@', '(', ')', '[', ']', '{', '}', '—', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
         private string language;
         private string data;
         private int[] compressedData;
@@ -173,33 +218,40 @@ namespace datacompression
             char processingBuffer = ' ';
             for (int i = 0; i < data.Length; i++)
             {
-                processingBuffer = processingAlphabet[processingAlphabet.findIndex(data[i])];
-                compressedData[i] = processingAlphabet.findIndex(data[i]);
-                for (int j = processingAlphabet.findIndex(data[i]); j > 0; j--)
+                try
                 {
-                    processingAlphabet[j] = processingAlphabet[j - 1];
+                    processingBuffer = processingAlphabet[processingAlphabet.findIndex(data[i])];
+                    compressedData[i] = processingAlphabet.findIndex(data[i]);
+                    for (int j = processingAlphabet.findIndex(data[i]); j > 0; j--)
+                    {
+                        processingAlphabet[j] = processingAlphabet[j - 1];
+                    }
+                    processingAlphabet[0] = processingBuffer;
                 }
-                processingAlphabet[0] = processingBuffer;
+                catch (Exception e)
+                {
+                    throw new Exception("Symbol" + data[i] + "not in alphabet");
+                }
             }
         }
     }
-    public class BTW
+    public class BWT
     {
         private string data;
         private string transformedData;
         private string dataBuffer;
         private string[] DataTransformationBuffer;
 
-        private static BTW instance;
-        private BTW(string data)
+        private static BWT instance;
+        private BWT(string data)
         {
             this.data = data;
         }
-        public static BTW GetInstance(string data)
+        public static BWT GetInstance(string data)
         {
             if (instance == null)
             {
-                instance = new BTW(data);
+                instance = new BWT(data);
             }
             else
             {
@@ -227,6 +279,8 @@ namespace datacompression
             {
                 throw new ArgumentNullException("Data string can not be null.");
             }
+
+            transformedData = "";
 
             dataBuffer = data;
 

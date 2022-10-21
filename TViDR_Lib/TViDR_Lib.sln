@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TViDR_Lib", "TViDR_Lib.cspr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TViDR_MSTest", "..\TViDR_MSTest\TViDR_MSTest.csproj", "{0BC4593A-9AA2-4616-B1CD-78B5E71697F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TViDR_WinForms", "..\TViDR_WinForms\TViDR_WinForms.csproj", "{7BDD3007-CDDF-4995-B78E-B1633445E4E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0BC4593A-9AA2-4616-B1CD-78B5E71697F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BC4593A-9AA2-4616-B1CD-78B5E71697F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BC4593A-9AA2-4616-B1CD-78B5E71697F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BDD3007-CDDF-4995-B78E-B1633445E4E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BDD3007-CDDF-4995-B78E-B1633445E4E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BDD3007-CDDF-4995-B78E-B1633445E4E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BDD3007-CDDF-4995-B78E-B1633445E4E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

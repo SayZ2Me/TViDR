@@ -71,7 +71,7 @@ namespace TViDR_MSTest
         public void TestBtwObject()
         {
             string data = "ABACABA";
-            BTW btw = BTW.GetInstance(data);
+            BWT btw = BWT.GetInstance(data);
             Assert.AreEqual(data, btw.Data);
         }
         [TestMethod]
@@ -79,7 +79,7 @@ namespace TViDR_MSTest
         {
             string data = "ABACABA";
 
-            BTW btw = BTW.GetInstance(data);
+            BWT btw = BWT.GetInstance(data);
 
             btw.TrasformData();
 
