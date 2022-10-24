@@ -2,8 +2,11 @@
 using System;
 using datacompression;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Diagnostics;
 using System.Reflection;
+using imageprocessing;
+using System.Linq;
 
 namespace TViDR_MSTest
 {
@@ -86,6 +89,30 @@ namespace TViDR_MSTest
             string assertData = "BCABAAA";
 
             Assert.AreEqual(assertData, btw.TransformedData);
+        }
+    }
+    [TestClass]
+    public class IpmDataProcessingTest
+    {
+        [TestMethod]
+        public void TestIPMEncoding()
+        {
+            List<QuantityOfPixels> assertData = new List<QuantityOfPixels>();
+            QuantityOfPixels series = new QuantityOfPixels();
+            series.quantity = 8;
+            series.pixel = Color.FromArgb(255,0,0,0);
+            assertData.Add(series);
+            series.quantity = 8;
+            series.pixel = Color.FromArgb(255, 255, 255, 255);
+            assertData.Add(series);
+            IPM ipm = new IPM("C:\\Users\\derri\\OneDrive\\Documents\\TViDR_Res\\4x4SampleMH.bmp");
+            ipm.ZigZag();
+            ipm.RLE();
+            for (int i = 0; i < assertData.Count(); i++)
+            {
+                Assert.AreEqual(assertData[i].pixel, ipm.EncodedData[i].pixel);
+                Assert.AreEqual(assertData[i].quantity, ipm.EncodedData[i].quantity);
+            }
         }
     }
 }

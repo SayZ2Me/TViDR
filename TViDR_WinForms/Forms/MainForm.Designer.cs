@@ -103,6 +103,7 @@
             // ButtonLabWork3
             // 
             this.ButtonLabWork3.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonLabWork3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonLabWork3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonLabWork3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
             this.ButtonLabWork3.FlatAppearance.BorderSize = 2;
@@ -130,6 +131,7 @@
             // ButtonLabWork2
             // 
             this.ButtonLabWork2.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonLabWork2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonLabWork2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonLabWork2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
             this.ButtonLabWork2.FlatAppearance.BorderSize = 2;
@@ -157,6 +159,7 @@
             // ButtonLabWork1
             // 
             this.ButtonLabWork1.BackColor = System.Drawing.Color.Transparent;
+            this.ButtonLabWork1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonLabWork1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonLabWork1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
             this.ButtonLabWork1.FlatAppearance.BorderSize = 2;

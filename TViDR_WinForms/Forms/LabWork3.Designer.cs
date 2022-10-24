@@ -30,14 +30,14 @@
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.InputTextBox = new System.Windows.Forms.TextBox();
-            this.OutputTextBox = new System.Windows.Forms.TextBox();
             this.ACMButton = new System.Windows.Forms.Button();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.BWTButton = new System.Windows.Forms.Button();
             this.MTFButton = new System.Windows.Forms.Button();
             this.splitContainer5 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer4 = new System.Windows.Forms.SplitContainer();
+            this.InputTextBox = new System.Windows.Forms.TextBox();
+            this.OutputTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -50,18 +50,19 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
+            this.splitContainer5.Panel1.SuspendLayout();
+            this.splitContainer5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).BeginInit();
-            this.splitContainer5.Panel1.SuspendLayout();
-            this.splitContainer5.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
             this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(5, 5);
             this.splitContainer1.Name = "splitContainer1";
@@ -97,6 +98,23 @@
             this.splitContainer2.SplitterWidth = 2;
             this.splitContainer2.TabIndex = 0;
             // 
+            // ACMButton
+            // 
+            this.ACMButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ACMButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ACMButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
+            this.ACMButton.FlatAppearance.BorderSize = 2;
+            this.ACMButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ACMButton.Font = new System.Drawing.Font("Geometria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ACMButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(42)))), ((int)(((byte)(88)))));
+            this.ACMButton.Location = new System.Drawing.Point(0, 0);
+            this.ACMButton.Name = "ACMButton";
+            this.ACMButton.Size = new System.Drawing.Size(263, 30);
+            this.ACMButton.TabIndex = 0;
+            this.ACMButton.Text = "ACM";
+            this.ACMButton.UseVisualStyleBackColor = true;
+            this.ACMButton.Click += new System.EventHandler(this.ACMButton_Click);
+            // 
             // splitContainer3
             // 
             this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -115,6 +133,54 @@
             this.splitContainer3.SplitterDistance = 263;
             this.splitContainer3.SplitterWidth = 2;
             this.splitContainer3.TabIndex = 0;
+            // 
+            // BWTButton
+            // 
+            this.BWTButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BWTButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BWTButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
+            this.BWTButton.FlatAppearance.BorderSize = 2;
+            this.BWTButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BWTButton.Font = new System.Drawing.Font("Geometria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BWTButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(42)))), ((int)(((byte)(88)))));
+            this.BWTButton.Location = new System.Drawing.Point(0, 0);
+            this.BWTButton.Name = "BWTButton";
+            this.BWTButton.Size = new System.Drawing.Size(263, 30);
+            this.BWTButton.TabIndex = 1;
+            this.BWTButton.Text = "BWT";
+            this.BWTButton.UseVisualStyleBackColor = true;
+            this.BWTButton.Click += new System.EventHandler(this.BWTButton_Click);
+            // 
+            // MTFButton
+            // 
+            this.MTFButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MTFButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MTFButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
+            this.MTFButton.FlatAppearance.BorderSize = 2;
+            this.MTFButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.MTFButton.Font = new System.Drawing.Font("Geometria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MTFButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(42)))), ((int)(((byte)(88)))));
+            this.MTFButton.Location = new System.Drawing.Point(0, 0);
+            this.MTFButton.Name = "MTFButton";
+            this.MTFButton.Size = new System.Drawing.Size(260, 30);
+            this.MTFButton.TabIndex = 2;
+            this.MTFButton.Text = "MTF";
+            this.MTFButton.UseVisualStyleBackColor = true;
+            this.MTFButton.Click += new System.EventHandler(this.MTFButton_Click);
+            // 
+            // splitContainer5
+            // 
+            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer5.Name = "splitContainer5";
+            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer5.Panel1
+            // 
+            this.splitContainer5.Panel1.Controls.Add(this.splitContainer4);
+            this.splitContainer5.Size = new System.Drawing.Size(790, 406);
+            this.splitContainer5.SplitterDistance = 363;
+            this.splitContainer5.TabIndex = 0;
             // 
             // splitContainer4
             // 
@@ -153,72 +219,9 @@
             this.OutputTextBox.Size = new System.Drawing.Size(394, 363);
             this.OutputTextBox.TabIndex = 0;
             // 
-            // ACMButton
-            // 
-            this.ACMButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ACMButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
-            this.ACMButton.FlatAppearance.BorderSize = 2;
-            this.ACMButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ACMButton.Font = new System.Drawing.Font("Geometria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ACMButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(42)))), ((int)(((byte)(88)))));
-            this.ACMButton.Location = new System.Drawing.Point(0, 0);
-            this.ACMButton.Name = "ACMButton";
-            this.ACMButton.Size = new System.Drawing.Size(263, 30);
-            this.ACMButton.TabIndex = 0;
-            this.ACMButton.Text = "ACM";
-            this.ACMButton.UseVisualStyleBackColor = true;
-            this.ACMButton.Click += new System.EventHandler(this.ACMButton_Click);
-            // 
-            // BWTButton
-            // 
-            this.BWTButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BWTButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
-            this.BWTButton.FlatAppearance.BorderSize = 2;
-            this.BWTButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BWTButton.Font = new System.Drawing.Font("Geometria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BWTButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(42)))), ((int)(((byte)(88)))));
-            this.BWTButton.Location = new System.Drawing.Point(0, 0);
-            this.BWTButton.Name = "BWTButton";
-            this.BWTButton.Size = new System.Drawing.Size(263, 30);
-            this.BWTButton.TabIndex = 1;
-            this.BWTButton.Text = "BWT";
-            this.BWTButton.UseVisualStyleBackColor = true;
-            this.BWTButton.Click += new System.EventHandler(this.BWTButton_Click);
-            // 
-            // MTFButton
-            // 
-            this.MTFButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MTFButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(12)))), ((int)(((byte)(30)))));
-            this.MTFButton.FlatAppearance.BorderSize = 2;
-            this.MTFButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.MTFButton.Font = new System.Drawing.Font("Geometria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.MTFButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(42)))), ((int)(((byte)(88)))));
-            this.MTFButton.Location = new System.Drawing.Point(0, 0);
-            this.MTFButton.Name = "MTFButton";
-            this.MTFButton.Size = new System.Drawing.Size(260, 30);
-            this.MTFButton.TabIndex = 2;
-            this.MTFButton.Text = "MTF";
-            this.MTFButton.UseVisualStyleBackColor = true;
-            this.MTFButton.Click += new System.EventHandler(this.MTFButton_Click);
-            // 
-            // splitContainer5
-            // 
-            this.splitContainer5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer5.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer5.Name = "splitContainer5";
-            this.splitContainer5.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer5.Panel1
-            // 
-            this.splitContainer5.Panel1.Controls.Add(this.splitContainer4);
-            this.splitContainer5.Size = new System.Drawing.Size(790, 406);
-            this.splitContainer5.SplitterDistance = 363;
-            this.splitContainer5.TabIndex = 0;
-            // 
             // LabWork3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.splitContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -237,15 +240,15 @@
             this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            this.splitContainer5.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
+            this.splitContainer5.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel1.PerformLayout();
             this.splitContainer4.Panel2.ResumeLayout(false);
             this.splitContainer4.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            this.splitContainer5.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer5)).EndInit();
-            this.splitContainer5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

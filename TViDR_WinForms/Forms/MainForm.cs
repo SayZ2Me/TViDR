@@ -118,7 +118,7 @@ namespace TViDR_WinForms
 
         private void ButtonLabWork1_Click(object sender, EventArgs e)
         {
-
+            LoadForm(new TViDR_WinForms.Forms.LabWork1());
         }
 
         private void ButtonLabWork2_Click(object sender, EventArgs e)

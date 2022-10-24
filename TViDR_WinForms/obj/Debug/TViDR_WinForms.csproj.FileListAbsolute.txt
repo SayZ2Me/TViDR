@@ -16,3 +16,4 @@ C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_WinForms\obj\Debug\TViDR_Wi
 C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_WinForms\bin\Debug\TViDR_Lib.dll
 C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_WinForms\bin\Debug\TViDR_Lib.pdb
 C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_WinForms\obj\Debug\TViDR_WinForms.csproj.CopyComplete
+C:\Users\derri\OneDrive\Documents\GitHub\TViDR\TViDR_WinForms\obj\Debug\TViDR_WinForms.Forms.LabWork1.resources

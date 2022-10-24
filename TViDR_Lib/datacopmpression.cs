@@ -18,7 +18,7 @@ namespace datacompression
     }
     public static class Extensions
     {
-        public static int findIndex<T>(this T[] array, T item)
+        public static int FindIndex<T>(this T[] array, T item)
         {
             return Array.IndexOf(array, item);
         }
@@ -128,8 +128,8 @@ namespace datacompression
     }
     public class MTF
     {
-        private char[] alphabet_ru_RU = { 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я', 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', ' ', '.', ',', '!', '?', '-', '_', '*', ';', ':', '@', '(', ')', '[', ']', '{', '}', '—', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-        private char[] alphabet_en_US = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '-', '_', '*', ';', ':', '@', '(', ')', '[', ']', '{', '}', '—', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        private readonly char[] alphabet_ru_RU = { 'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З', 'И', 'Й', 'К', 'Л', 'М', 'Н', 'О', 'П', 'Р', 'С', 'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ', 'Ы', 'Ь', 'Э', 'Ю', 'Я', 'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я', ' ', '.', ',', '!', '?', '-', '_', '*', ';', ':', '@', '(', ')', '[', ']', '{', '}', '—', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
+        private readonly char[] alphabet_en_US = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', ' ', '.', ',', '!', '?', '-', '_', '*', ';', ':', '@', '(', ')', '[', ']', '{', '}', '—', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
         private string language;
         private string data;
         private int[] compressedData;
@@ -158,11 +158,11 @@ namespace datacompression
         private void DefineLanguage()
         {
             if (string.IsNullOrEmpty(data)) { throw new ArgumentNullException("Data string can not be null."); }
-            if (alphabet_ru_RU.findIndex(data[0]) >= 0)
+            if (alphabet_ru_RU.FindIndex(data[0]) >= 0)
             {
                 this.language = "ru_RU";
             }
-            else if (alphabet_en_US.findIndex(data[0]) >= 0)
+            else if (alphabet_en_US.FindIndex(data[0]) >= 0)
             {
                 this.language = "en_US";
             }
@@ -215,20 +215,20 @@ namespace datacompression
                     processingAlphabet[i] = alphabet_en_US[i];
                 }
             }
-            char processingBuffer = ' ';
+            char processingBuffer;
             for (int i = 0; i < data.Length; i++)
             {
                 try
                 {
-                    processingBuffer = processingAlphabet[processingAlphabet.findIndex(data[i])];
-                    compressedData[i] = processingAlphabet.findIndex(data[i]);
-                    for (int j = processingAlphabet.findIndex(data[i]); j > 0; j--)
+                    processingBuffer = processingAlphabet[processingAlphabet.FindIndex(data[i])];
+                    compressedData[i] = processingAlphabet.FindIndex(data[i]);
+                    for (int j = processingAlphabet.FindIndex(data[i]); j > 0; j--)
                     {
                         processingAlphabet[j] = processingAlphabet[j - 1];
                     }
                     processingAlphabet[0] = processingBuffer;
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     throw new Exception("Symbol" + data[i] + "not in alphabet");
                 }
@@ -238,6 +238,7 @@ namespace datacompression
     public class BWT
     {
         private string data;
+        private int index;
         private string transformedData;
         private string dataBuffer;
         private string[] DataTransformationBuffer;
@@ -269,7 +270,7 @@ namespace datacompression
         {
             get { return transformedData; }
         }
-        private void shiftDataBuffer()
+        private void ShiftDataBuffer()
         {
             dataBuffer = dataBuffer.Substring(1, dataBuffer.Length - 1) + dataBuffer.Substring(0, 1);
         }
@@ -289,9 +290,10 @@ namespace datacompression
             for (int i = 0; i < data.Length; i++)
             {
                 DataTransformationBuffer[i] = dataBuffer;
-                shiftDataBuffer();
+                ShiftDataBuffer();
             }
             Array.Sort(DataTransformationBuffer);
+            index = DataTransformationBuffer.FindIndex(data);
             for (int i = 0; i < DataTransformationBuffer.Length; i++)
             {
                 transformedData += DataTransformationBuffer[i][DataTransformationBuffer.Length - 1];
